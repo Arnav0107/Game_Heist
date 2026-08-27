@@ -142,9 +142,9 @@
     },
     {
       "id": "clue_4",
-      "title": "Security Bulletin",
+      "title": "Blockchain Security Bulletin",
       "type": "News Article",
-      "description": "Blockchain Security Bulletin #402: 'We tracked the DevCon Heist. The mixer wallet 0x3b8d...6c7b (DevRel_Anna) was completely inactive and had zero transactions on Aug 26, 2026. The funds must have bypassed it entirely.'"
+      "description": "Forensic analysts confirm the DevCon Heist followed a clean relay pattern. DevRel_Anna's wallet (0x3b8d...6c7b) forwarded the stolen funds to CryptoWhale_99 at exactly 10:07 AM, continuing the attacker's standard interval."
     },
     {
       "id": "clue_5",
