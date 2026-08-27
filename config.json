@@ -1,0 +1,156 @@
+{
+  "timerDurationSeconds": 720,
+  "correctThiefWallet": "0x5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a",
+  "correctFakeClueId": "clue_4",
+  "wallets": [
+    {
+      "address": "0x7f3a2c4e9b8d0a1b2c3d4e5f6a7b8c9d0e1f2a3b",
+      "alias": "CryptoWhale_99",
+      "balance": "0.15 ETH",
+      "firstSeen": "Jan-12-2025",
+      "blurb": "Known for high-frequency trading and late-night liquidity sniping."
+    },
+    {
+      "address": "0x3b8d9c1f2e3d4c5b6a7f8e9d0c1b2a3f4e5d6c7b",
+      "alias": "DevRel_Anna",
+      "balance": "10.50 ETH",
+      "firstSeen": "Mar-22-2024",
+      "blurb": "A prominent developer relations lead who frequently sends grants to new projects."
+    },
+    {
+      "address": "0x5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a",
+      "alias": "SmartContract_Dev",
+      "balance": "45.20 ETH",
+      "firstSeen": "Nov-05-2024",
+      "blurb": "Writes audited smart contracts but has a reputation for cutting corners on security."
+    },
+    {
+      "address": "0x9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b",
+      "alias": "Miner_Bob",
+      "balance": "125.00 ETH",
+      "firstSeen": "Jul-18-2023",
+      "blurb": "Runs a small mining pool and occasionally participates in arbitrage bots."
+    },
+    {
+      "address": "0x1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b",
+      "alias": "ColdStorage_Alpha",
+      "balance": "1004.80 ETH",
+      "firstSeen": "Feb-10-2023",
+      "blurb": "A secure multi-sig wallet reserved for treasury recovery operations."
+    }
+  ],
+  "transactions": [
+    {
+      "hash": "0xab1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcd",
+      "timestamp": "2026-08-26T10:00:00Z",
+      "from": "0xDeVc0n7777777777777777777777777777777777",
+      "to": "0x5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a",
+      "amount": "100.00",
+      "token": "ETH"
+    },
+    {
+      "hash": "0xbc234567890abcdef1234567890abcdef1234567890abcdef1234567890abcde",
+      "timestamp": "2026-08-26T10:03:00Z",
+      "from": "0x5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a",
+      "to": "0x3b8d9c1f2e3d4c5b6a7f8e9d0c1b2a3f4e5d6c7b",
+      "amount": "100.00",
+      "token": "ETH"
+    },
+    {
+      "hash": "0xcd34567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
+      "timestamp": "2026-08-26T10:06:00Z",
+      "from": "0x3b8d9c1f2e3d4c5b6a7f8e9d0c1b2a3f4e5d6c7b",
+      "to": "0x7f3a2c4e9b8d0a1b2c3d4e5f6a7b8c9d0e1f2a3b",
+      "amount": "100.00",
+      "token": "ETH"
+    },
+    {
+      "hash": "0xde4567890abcdef1234567890abcdef1234567890abcdef1234567890abcda1",
+      "timestamp": "2026-08-26T10:09:00Z",
+      "from": "0x7f3a2c4e9b8d0a1b2c3d4e5f6a7b8c9d0e1f2a3b",
+      "to": "0x9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b",
+      "amount": "100.00",
+      "token": "ETH"
+    },
+    {
+      "hash": "0xef567890abcdef1234567890abcdef1234567890abcdef1234567890abcdb2",
+      "timestamp": "2026-08-26T10:12:00Z",
+      "from": "0x9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b",
+      "to": "0x1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b",
+      "amount": "100.00",
+      "token": "ETH"
+    },
+    {
+      "hash": "0x111111111111abcdef1234567890abcdef1234567890abcdef12345678901111",
+      "timestamp": "2026-08-26T08:15:00Z",
+      "from": "0x7f3a2c4e9b8d0a1b2c3d4e5f6a7b8c9d0e1f2a3b",
+      "to": "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",
+      "amount": "0.50",
+      "token": "ETH"
+    },
+    {
+      "hash": "0x222222222222abcdef1234567890abcdef1234567890abcdef12345678902222",
+      "timestamp": "2026-08-26T09:00:00Z",
+      "from": "0x3b8d9c1f2e3d4c5b6a7f8e9d0c1b2a3f4e5d6c7b",
+      "to": "0xbc534567890abcdef1234567890abcdef1234567890abcdef1234567890aaaa",
+      "amount": "5.00",
+      "token": "ETH"
+    },
+    {
+      "hash": "0x333333333333abcdef1234567890abcdef1234567890abcdef12345678903333",
+      "timestamp": "2026-08-26T09:45:00Z",
+      "from": "0x5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a",
+      "to": "0x112233445566abcdef1234567890abcdef1234567890abcdef12345678901122",
+      "amount": "12.50",
+      "token": "ETH"
+    },
+    {
+      "hash": "0x444444444444abcdef1234567890abcdef1234567890abcdef12345678904444",
+      "timestamp": "2026-08-26T10:02:00Z",
+      "from": "0xaa887c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b",
+      "to": "0x9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b",
+      "amount": "6.20",
+      "token": "ETH"
+    },
+    {
+      "hash": "0x555555555555abcdef1234567890abcdef1234567890abcdef12345678905555",
+      "timestamp": "2026-08-26T09:30:00Z",
+      "from": "0xDeVc0n7777777777777777777777777777777777",
+      "to": "0x2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b",
+      "amount": "20.00",
+      "token": "ETH"
+    }
+  ],
+  "clues": [
+    {
+      "id": "clue_1",
+      "title": "Treasury Intrusion Log",
+      "type": "System Alert",
+      "description": "DevCon Treasury logs indicate a security breach occurred at 10:00:00 UTC. The stolen 100 ETH was routed immediately to an external address: 0x5f6a...f4a0."
+    },
+    {
+      "id": "clue_2",
+      "title": "Leaked Discord DM",
+      "type": "Chat Log",
+      "description": "A message leaked from a hacker server. SolidityKing writes: 'Got the keys. Sent the 100 ETH to my dev address (0x5f6a...f4a0). I'm forwarding it to your mixer address 0x3b8d...6c7b now. Wash it.'"
+    },
+    {
+      "id": "clue_3",
+      "title": "Anonymous Informant Note",
+      "type": "Informant Tip",
+      "description": "An encrypted email states: 'Anna washed the 100 ETH and sent it to CryptoWhale_99 (0x7f3a...2a3b) at 10:06 AM, who immediately bounced it to Miner_Bob (0x9a8b...1a0b) at 10:09 AM.'"
+    },
+    {
+      "id": "clue_4",
+      "title": "Security Bulletin",
+      "type": "News Article",
+      "description": "Blockchain Security Bulletin #402: 'We tracked the DevCon Heist. The mixer wallet 0x3b8d...6c7b (DevRel_Anna) was completely inactive and had zero transactions on Aug 26, 2026. The funds must have bypassed it entirely.'"
+    },
+    {
+      "id": "clue_5",
+      "title": "Bob's Ledger Entry",
+      "type": "Ledger Entry",
+      "description": "Miner_Bob's validator logs show: 'Secured 100 ETH block reward/anomaly at 10:09 AM. Routed to ColdStorage_Alpha (0x1a2b...9a0b) at 10:12 AM under emergency salvage protocol.'"
+    }
+  ]
+}

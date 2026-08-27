@@ -1,0 +1,5 @@
+node_modules/
+submissions.json
+.system_generated/
+.gemini/
+*.log

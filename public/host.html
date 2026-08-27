@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The DevCon Heist — Host Terminal & Leaderboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Scanline Overlay for Hacker Terminal Vibe -->
+  <div class="scanlines"></div>
+
+  <!-- Host View Layout -->
+  <div class="screen active">
+    
+    <div class="host-layout">
+      
+      <!-- Top Header -->
+      <header class="host-header">
+        <div class="host-header-top">
+          <div class="host-logo-container">
+            <span class="live-indicator"></span>
+            <h1 class="host-title">DevCon Heist Control Panel</h1>
+          </div>
+          <div class="host-controls-header">
+            <button id="host-lock-btn" class="host-btn host-btn-lock">
+              🔒 FREEZE ANSWERS
+            </button>
+            <button id="host-reveal-btn" class="host-btn host-btn-reveal">
+              👁️ REVEAL RESULTS
+            </button>
+          </div>
+        </div>
+        
+        <!-- Connection Info Banner -->
+        <div class="host-connection-banner">
+          <div class="connection-desc">
+            📡 Wi-Fi Game Network: <strong style="color:var(--text-primary);">Same network as host</strong>
+          </div>
+          <div>
+            URL: <span id="game-connection-url" class="connection-url">http://...</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Left Column: Live Leaderboard -->
+      <main class="leaderboard-container">
+        <h2 class="leaderboard-title">Live Standings</h2>
+        
+        <!-- Top 3 Podium -->
+        <div class="podium-grid">
+          
+          <!-- 2nd Place -->
+          <div id="podium-spot-2" class="podium-spot second">
+            <div class="podium-rank">2nd</div>
+            <div id="podium-name-2" class="podium-name">-</div>
+            <div id="podium-time-2" class="podium-time">-</div>
+          </div>
+          
+          <!-- 1st Place -->
+          <div id="podium-spot-1" class="podium-spot first">
+            <div class="podium-rank">1st</div>
+            <div id="podium-name-1" class="podium-name">Waiting for Solves</div>
+            <div id="podium-time-1" class="podium-time">-</div>
+          </div>
+
+          <!-- 3rd Place -->
+          <div id="podium-spot-3" class="podium-spot third">
+            <div class="podium-rank">3rd</div>
+            <div id="podium-name-3" class="podium-name">-</div>
+            <div id="podium-time-3" class="podium-time">-</div>
+          </div>
+
+        </div>
+
+        <!-- Leaderboard Table -->
+        <div class="leaderboard-table-wrapper">
+          <table class="leaderboard-table">
+            <thead>
+              <tr>
+                <th style="width: 80px;">Rank</th>
+                <th>Team Name</th>
+                <th>Thief Suspect</th>
+                <th>Fake Clue Suspect</th>
+                <th>Validation</th>
+                <th>Time Locked</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboard-tbody">
+              <tr>
+                <td colspan="6" class="tx-empty">Waiting for submissions to connect...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+
+      <!-- Right Column: Host Sidebar (QR Code & Answer Reveal) -->
+      <aside class="host-sidebar">
+        
+        <!-- QR Code Connection -->
+        <section class="qr-panel">
+          <h2 class="qr-title">Scan to Play</h2>
+          <div class="qr-wrapper">
+            <img id="qr-img" class="qr-image" src="" alt="Scan QR code to join game">
+          </div>
+          <p class="qr-sub">Scan with your phone to trace transactions and solve the DevCon Treasury heist.</p>
+        </section>
+
+        <!-- Answer Reveal Block -->
+        <section id="reveal-panel" class="reveal-results-panel">
+          <h2 class="reveal-title">Mystery Solved</h2>
+          
+          <div class="reveal-answers-grid">
+            <div class="reveal-answer-card thief">
+              <span class="reveal-label">Thief Identity</span>
+              <span id="reveal-thief-alias" class="reveal-value">-</span>
+              <span id="reveal-thief-address" class="reveal-address mono">-</span>
+            </div>
+
+            <div class="reveal-answer-card clue">
+              <span class="reveal-label">Contradictory Clue</span>
+              <span id="reveal-clue-title" class="reveal-value">-</span>
+              <span class="reveal-address">Contradicts Mixer (DevRel_Anna) Tx History</span>
+            </div>
+          </div>
+
+          <div class="reveal-closing">
+            You just used blockchain transparency to investigate a crime.
+          </div>
+        </section>
+
+      </aside>
+
+    </div>
+  </div>
+
+  <script src="host.js"></script>
+</body>
+</html>

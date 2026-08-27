@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>The DevCon Heist — Crypto Investigation Game</title>
+  <meta name="description" content="100 ETH has been stolen from the DevCon Treasury. Trace the transactions, analyze the clues, and find the thief before the timer runs out.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Scanline Overlay for Hacker Terminal Vibe -->
+  <div class="scanlines"></div>
+
+  <!-- ================= SCREEN 1: LANDING / BREAKING NEWS ================= -->
+  <div id="screen-landing" class="screen landing-screen active">
+    <div class="news-alert-banner">
+      <span></span> BREAKING NEWS <span></span>
+    </div>
+    
+    <h1 class="landing-title">The DevCon Heist</h1>
+    
+    <p class="landing-subtext">
+      <strong>100 ETH</strong> has been stolen from the DevCon Treasury. 
+      Your team has <strong>12 minutes</strong> to trace the on-chain transaction trail across 5 wallets, 
+      identify the thief's address, and spot the one fake clue planted in the evidence.
+    </p>
+
+    <div class="timer-box">
+      <div id="landing-countdown" class="countdown-display">12:00</div>
+      <div class="timer-label">Time Remaining</div>
+    </div>
+
+    <div class="cta-container">
+      <div class="team-input-wrapper">
+        <input type="text" id="team-name-input" class="team-input" placeholder="ENTER TEAM NAME..." autocomplete="off">
+      </div>
+      <button id="start-game-btn" class="btn-primary">
+        <span>&gt;</span> ENTER CASE FILE
+      </button>
+    </div>
+  </div>
+
+  <!-- ================= SCREEN 2: INVESTIGATION BOARD ================= -->
+  <div id="screen-game" class="screen">
+    <!-- Sticky Header -->
+    <header class="game-header">
+      <div class="game-title-info">
+        <span class="live-indicator"></span>
+        <span class="game-title-text">CASE: DEVCON HEIST</span>
+      </div>
+      
+      <div id="team-name-display" class="team-display">Team: ...</div>
+
+      <div id="game-timer-wrapper" class="game-timer-container">
+        <span class="game-timer-icon">⏱</span>
+        <span id="game-countdown" class="game-timer">12:00</span>
+      </div>
+    </header>
+
+    <!-- Board Grid -->
+    <main class="board-container">
+      
+      <!-- Left Column: Wallets -->
+      <section class="wallets-section">
+        <h2 class="section-title">Suspect Wallets</h2>
+        <div id="wallets-grid" class="wallets-grid">
+          <!-- Populated via Javascript -->
+          <div class="tx-empty">Loading suspects...</div>
+        </div>
+      </section>
+
+      <!-- Middle Column: Blockchain Explorer -->
+      <section class="explorer-section">
+        <h2 class="section-title">Blockchain Explorer</h2>
+        <div class="explorer-panel">
+          <div class="explorer-header">
+            <div class="explorer-title">
+              🌐 Etherscan Terminal
+              <button id="reset-filter-btn" class="filter-reset-btn" style="display: none;">Show All</button>
+            </div>
+            <div id="explorer-filter-desc" class="explorer-filter-desc">
+              Showing <strong>all transactions</strong>. Click a wallet profile to filter.
+            </div>
+          </div>
+          <div class="explorer-table-wrapper">
+            <table class="explorer-table">
+              <thead>
+                <tr>
+                  <th>Tx Hash</th>
+                  <th>Age/Time</th>
+                  <th>From</th>
+                  <th></th>
+                  <th>To</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody id="explorer-tbody">
+                <!-- Populated via Javascript -->
+                <tr>
+                  <td colspan="6" class="tx-empty">Loading ledger...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Column: Evidence Clues -->
+      <section class="clues-section">
+        <h2 class="section-title">Evidence Clues</h2>
+        <div id="clues-grid" class="clues-grid">
+          <!-- Populated via Javascript -->
+          <div class="tx-empty">Loading evidence files...</div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Bottom Sticky CTA -->
+    <div class="action-section">
+      <button id="open-submit-btn" class="btn-primary btn-large">
+        🎯 TRANSMIT FINAL COORDINATES
+      </button>
+    </div>
+  </div>
+
+  <!-- ================= SUBMIT ANSWERS MODAL OVERLAY ================= -->
+  <div id="submit-overlay" class="submit-overlay">
+    <div class="modal-content">
+      <button id="close-submit-btn" class="modal-close">X</button>
+      <h3 class="modal-title">Transmit Case Coordinates</h3>
+      
+      <div id="submit-error" class="modal-error">Error message placeholder</div>
+
+      <div class="form-group">
+        <label class="form-label" for="suspect-thief-select">Primary Thief Suspect</label>
+        <select id="suspect-thief-select" class="form-input">
+          <option value="">-- SELECT SUSPECT WALLET --</option>
+          <!-- Populated via JS -->
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="suspect-clue-select">Fake Evidence Clue</label>
+        <select id="suspect-clue-select" class="form-input">
+          <option value="">-- SELECT CONTRADICTORY CLUE --</option>
+          <!-- Populated via JS -->
+        </select>
+      </div>
+
+      <button id="transmit-btn" class="btn-primary">
+        📡 TRANSMIT COORDINATES
+      </button>
+    </div>
+  </div>
+
+  <!-- ================= SCREEN 3: RESULTS / FEEDBACK ================= -->
+  <div id="screen-result" class="screen result-screen">
+    <div class="result-card">
+      <div id="result-icon" class="result-icon">✅</div>
+      <h2 id="result-status-title" class="result-status-title status-correct">Coordinates Verified</h2>
+      <p id="result-msg" class="result-message">
+        Transmission successfully received. Your response has been locked into the host's terminal. Look at the presenter's screen for real-time standings!
+      </p>
+      
+      <div class="result-stats">
+        <div class="result-stat-row">
+          <span class="stat-label">Team Name</span>
+          <span id="result-stat-team" class="stat-value">Team-X</span>
+        </div>
+        <div class="result-stat-row">
+          <span class="stat-label">Thief Identification</span>
+          <span id="result-stat-thief" class="stat-value">Correct</span>
+        </div>
+        <div class="result-stat-row">
+          <span class="stat-label">Clue Contradiction</span>
+          <span id="result-stat-clue" class="stat-value">Correct</span>
+        </div>
+        <div class="result-stat-row">
+          <span class="stat-label">Locked In Time</span>
+          <span id="result-stat-time" class="stat-value">10:04:12 AM</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
